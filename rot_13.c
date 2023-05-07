@@ -6,7 +6,7 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 05:33:46 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 06:11:23 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/07 06:13:01 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@ int main(int ac, char **av) {
 	if(ac == 2) {
 		int i = -1;
 		while(av[1][++i]) {
-			char c = av[1][i];
-			if(is_alpha(c)) {
-				char base = is_lower(c) ? 'a' : 'A';
-				c = base + (c - base + 13) % 26;
+			if(is_alpha(av[1][i])) {
+				char base = is_lower(av[1][i]) ? 'a' : 'A';
+				av[1][i] = base + (av[1][i] - base + 13) % 26;
 			}
-			write(1, &c, 1);
+			write(1, &av[1][i], 1);
 		}
 	}
 	write(1, "\n", 1);
