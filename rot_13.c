@@ -6,12 +6,11 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 05:33:46 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 06:06:43 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/07 06:11:23 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <ctype.h>
 
 int	is_lower(char c) {
 	return c >= 'a' && c <= 'z';
