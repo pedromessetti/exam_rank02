@@ -6,7 +6,7 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 05:33:46 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 06:02:55 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/07 06:06:43 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ctype.h>
 
 int	is_lower(char c) {
-	return c <= 'a' && c >= 'z';
+	return c >= 'a' && c <= 'z';
 }
 
 int is_alpha(char c) {
@@ -29,7 +29,7 @@ int main(int ac, char **av) {
 		while(av[1][++i]) {
 			char c = av[1][i];
 			if(is_alpha(c)) {
-				char base = islower(c) ? 'a' : 'A';
+				char base = is_lower(c) ? 'a' : 'A';
 				c = base + (c - base + 13) % 26;
 			}
 			write(1, &c, 1);
