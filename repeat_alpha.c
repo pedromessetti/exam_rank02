@@ -6,7 +6,7 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:16:59 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 05:15:02 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/07 22:06:41 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,17 @@
 char	ft_tolower(char c) {
 		if (c <= 'Z' && c >= 'A')
 			c = c + 32;
-	return (c);
+	return c;
 }
 
 int is_alpha(char c) {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+		return 1;
+	return 0;
 }
 
 int main(int ac, char **av) {
 	if(ac == 2) {
-		if(!av[1]){
-			write(1, "\n", 1);
-			return (0);
-		}
 		int i = -1;
 		while(av[1][++i]) {
 			if(is_alpha(av[1][i])) {

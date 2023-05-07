@@ -6,16 +6,14 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 12:43:58 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/06 13:15:56 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/07 22:07:48 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, char *s2)
-{
+char	*ft_strcpy(char *s1, char *s2) {
 	int i = -1;
-	
 	while (s2[++i])
 		s1[i] = s2[i];
 	s1[i] = '\0';
-	return (s1);
+	return s1;
 }

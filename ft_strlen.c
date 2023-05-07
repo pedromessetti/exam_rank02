@@ -6,12 +6,11 @@
 /*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 12:44:17 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/06 12:49:44 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/07 22:07:31 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strlen(char *s)
-{
+int ft_strlen(char *s) {
 	int i = -1;
 	while(s[++i]);
 	return (i);
