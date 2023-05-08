@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 13:16:59 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 22:06:41 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/08 09:41:56 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	ft_tolower(char c) {
-		if (c <= 'Z' && c >= 'A')
-			c = c + 32;
-	return c;
+char	to_lower(char c) {
+	if (c <= 'Z' && c >= 'A')
+		c += 32;
+	return c ;
 }
 
 int is_alpha(char c) {
@@ -37,5 +37,5 @@ int main(int ac, char **av) {
 		}
 	}
 	write(1, "\n", 1);
-	return (0);
+	return 0;
 }

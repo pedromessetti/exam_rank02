@@ -3,25 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   first_word.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/06 09:55:34 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 22:13:39 by pedro            ###   ########.fr       */
+/*   Updated: 2023/05/08 09:38:44 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
 int	is_printable(char c)  {
-	if ((c > 32 && c < 127))
-		return (1);
-	return (0);
+	if ((c > 32 && c < 127)) return 1;
+	return 0;
 }
 
 int	is_space_tab(char c) {
-	if (c == 32 || c == 9)
-		return (1);
-	return (0);
+	if (c == 32 || c == 9) return 1;
+	return 0;
 }
 
 int	main(int ac, char **av) {
@@ -38,5 +36,5 @@ int	main(int ac, char **av) {
 		}
 	}
 	write(1, "\n", 1);
-	return (0);
+	return 0;
 }
