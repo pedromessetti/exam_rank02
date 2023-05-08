@@ -9,10 +9,6 @@ If the number of arguments is not 1, the program displays '\n'.
 
 #include <unistd.h>
 
-int is_alpha(char c) {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'z')) return 1;
-    return 0;
-}
 int main(int ac, char **av)
 {
     if (ac == 2)
