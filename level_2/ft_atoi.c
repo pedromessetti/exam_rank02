@@ -5,8 +5,6 @@ and returns it.
 It works much like the standard atoi(const char *str) function, see the man.
 */
 
-#include <stdio.h>
-
 int ft_atoi(const char *str) {
     int sign = 1;
     int i = 0;

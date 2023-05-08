@@ -13,7 +13,6 @@ numbers, in input or output, will have one and only one leading '-'. The
 result of the operation fits in an int.
 */
 
-#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
 
