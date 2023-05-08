@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 05:20:13 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/08 09:42:10 by pmessett         ###   ########.fr       */
+/*   Created: 2023/05/06 12:43:58 by pedro             #+#    #+#             */
+/*   Updated: 2023/05/08 10:23:27 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-int ft_strlen(char *s)
-{
+char	*ft_strcpy(char *s1, char *s2) {
 	int i = -1;
-	while(s[++i]);
-	return i;
-}
-
-int main(int ac, char**av) {
-	if (ac == 2) {
-		int i = ft_strlen(av[1]);
-		while (av[1][--i])
-			write(1, &av[1][i], 1);
-	}
-	write(1, "\n", 1);
-	return 0;
+	while (s2[++i])
+		s1[i] = s2[i];
+	s1[i] = '\0';
+	return s1;
 }

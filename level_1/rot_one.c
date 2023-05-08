@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   rot_one.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 09:55:34 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/08 09:38:44 by pmessett         ###   ########.fr       */
+/*   Created: 2023/05/07 06:11:11 by pedro             #+#    #+#             */
+/*   Updated: 2023/05/08 10:23:19 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	is_printable(char c)  {
-	if ((c > 32 && c < 127)) return 1;
+int	is_lower(char c) {
+	return c >= 'a' && c <= 'z';
+}
+
+int is_alpha(char c) {
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		return 1;
 	return 0;
 }
 
-int	is_space_tab(char c) {
-	if (c == 32 || c == 9) return 1;
-	return 0;
-}
-
-int	main(int ac, char **av) {
-	if (ac == 2) {
+int main(int ac, char **av) {
+	if(ac == 2) {
 		int i = -1;
-		while (av[1][++i]) {
-			while (is_space_tab(av[1][i]))
-				i++;
-			if (is_printable(av[1][i])) {
-				write(1, &av[1][i], 1);
-				if (!is_printable(av[1][i + 1]))
-					return (write(1, "\n", 1));
-			} else break ;
+		while(av[1][++i]) {
+			if(is_alpha(av[1][i])) {
+				char base = is_lower(av[1][i]) ? 'a' : 'A';
+				av[1][i] = base + (av[1][i] - base + 1) % 26;
+			}
+			write(1, &av[1][i], 1);
 		}
 	}
 	write(1, "\n", 1);

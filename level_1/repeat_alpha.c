@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rot_13.c                                           :+:      :+:    :+:   */
+/*   repeat_alpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 05:33:46 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/07 22:05:02 by pedro            ###   ########.fr       */
+/*   Created: 2023/05/06 13:16:59 by pedro             #+#    #+#             */
+/*   Updated: 2023/05/08 10:23:24 by pmessett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	is_lower(char c) {
-	return c >= 'a' && c <= 'z';
+char	to_lower(char c) {
+	if (c <= 'Z' && c >= 'A')
+		c += 32;
+	return c ;
 }
 
 int is_alpha(char c) {
@@ -27,10 +29,11 @@ int main(int ac, char **av) {
 		int i = -1;
 		while(av[1][++i]) {
 			if(is_alpha(av[1][i])) {
-				char base = is_lower(av[1][i]) ? 'a' : 'A';
-				av[1][i] = base + (av[1][i] - base + 13) % 26;
-			}
-			write(1, &av[1][i], 1);
+				int posix = ft_tolower(av[1][i]) - 'a' + 1;
+				for (int j = 0; j < posix; j++)
+					write(1, &av[1][i], 1);
+			} else 
+				write(1, &av[1][i], 1);
 		}
 	}
 	write(1, "\n", 1);
