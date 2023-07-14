@@ -1,14 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 12:44:17 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/08 10:23:26 by pmessett         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/* 
+
+Assignment name  : ft_strlen
+Expected files   : ft_strlen.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Write a function that returns the length of a string.
+
+Your function must be declared as follows:
+
+int	ft_strlen(char *str);
+
+*/
 
 int ft_strlen(char *s) {
 	int i = -1;

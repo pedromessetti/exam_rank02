@@ -1,15 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 12:38:21 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/08 10:23:28 by pmessett         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/*
 
+Assignment name  : ft_putstr
+Expected files   : ft_putstr.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a function that displays a string on the standard output.
+
+The pointer passed to the function contains the address of the string's first
+character.
+
+Your function must be declared as follows:
+
+void	ft_putstr(char *str);
+
+*/
 #include <unistd.h>
 
 void	ft_putstr(char *s)

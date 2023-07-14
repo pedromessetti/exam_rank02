@@ -1,14 +1,17 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/06 12:43:58 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/08 10:23:27 by pmessett         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/*
+
+Assignment name  : ft_strcpy
+Expected files   : ft_strcpy.c
+Allowed functions: 
+--------------------------------------------------------------------------------
+
+Reproduce the behavior of the function strcpy (man strcpy).
+
+Your function must be declared as follows:
+
+char    *ft_strcpy(char *s1, char *s2);
+
+*/
 
 char	*ft_strcpy(char *s1, char *s2) {
 	int i = -1;

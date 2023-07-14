@@ -1,14 +1,25 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   rev_print.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: pmessett <pmessett@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/07 05:20:13 by pedro             #+#    #+#             */
-/*   Updated: 2023/05/08 10:23:23 by pmessett         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+/*
+
+Assignment name  : rev_print
+Expected files   : rev_print.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string, and displays the string in reverse
+followed by a newline.
+
+If the number of parameters is not 1, the program displays a newline.
+
+Examples:
+
+$> ./rev_print "zaz" | cat -e
+zaz$
+$> ./rev_print "dub0 a POIL" | cat -e
+LIOP a 0bud$
+$> ./rev_print | cat -e
+$
+
+*/
 
 #include <unistd.h>
 
