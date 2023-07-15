@@ -1,3 +1,5 @@
+/*
+
 Assignment name  : ft_list_size
 Expected files   : ft_list_size.c, ft_list.h
 Allowed functions: 
@@ -18,3 +20,17 @@ typedef struct    s_list
     struct s_list *next;
     void          *data;
 }                 t_list;
+
+*/
+
+#include "ft_list.h"
+
+int	ft_list_size(t_list *begin_list) {
+    int i = 0;
+    t_list *curr = begin_list;
+    while (curr) {
+        i++;
+        curr = curr->next;
+    }
+    return i;
+}
