@@ -18,11 +18,11 @@ Example, if you pass 2 to print_bits, it will print "00000010"
 
 #include <unistd.h>
 
-void	print_bits(unsigned char octet) { //42
+void	print_bits(unsigned char octet) {
     int maxbits = 8;
     unsigned char bit;
     while (maxbits--) {
-        bit = (octet >> maxbits & 1) + '0'; // 42>>6
-        write(1, &bit, 1); // 00
+        bit = (octet >> maxbits & 1) + '0';
+        write(1, &bit, 1);
     }
 }

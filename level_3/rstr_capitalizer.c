@@ -66,7 +66,7 @@ int main(int ac, char **av) {
       av[i] = to_lower(av[i]);
       int j = -1;
       while(av[i][++j]) {
-        if ((is_space(av[i][j + 1]) && is_alpha(av[i][j])) || !av[i][j + 1])
+        if ((is_space(av[i][j + 1]) && is_alpha(av[i][j])) || (!av[i][j + 1] && is_alpha(av[i][j])))
           av[i][j] -= 32;
         write(1, &av[i][j], 1);
       }

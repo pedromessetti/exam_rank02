@@ -29,6 +29,8 @@ $
 
 int main(int ac, char **av) {
     if (ac == 2) {
+        if (!*av[1])
+            return write(1, "\n", 1);
         int i = -1;
         while (av[1][++i]) {
             if (av[1][i] == '_') {
