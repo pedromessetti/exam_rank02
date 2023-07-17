@@ -18,14 +18,12 @@ If the array is empty, the function returns 0.
 
 */
 
-#include <stdio.h>
-
 int max(int *tab, unsigned int len) {
     unsigned int i = -1;
-    int current = tab[0];
+    int max = tab[0];
     while (++i <= len) {
-        if (tab[i] > current)
-            current = tab[i];
+        if (tab[i] > max)
+            max = tab[i];
     }
-    return current;
+    return max;
 }
