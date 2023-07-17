@@ -41,8 +41,7 @@ $>
 #include <stdlib.h>
 
 int is_space(char c) {
-    if (c == ' ' || c == '\t') return 1;
-    return 0;
+    return (c == ' ' || c == '\t');
 }
 
 int main(int ac, char **av) {

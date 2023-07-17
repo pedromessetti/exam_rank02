@@ -33,14 +33,8 @@ $>
 
 #include <unistd.h>
 
-int	is_lower(char c) {
-	return c >= 'a' && c <= 'z';
-}
-
 int is_alpha(char c) {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return 1;
-	return 0;
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
 int main(int ac, char **av) {
@@ -48,7 +42,7 @@ int main(int ac, char **av) {
 		int i = -1;
 		while(av[1][++i]) {
 			if(is_alpha(av[1][i])) {
-				char base = is_lower(av[1][i]) ? 'a' : 'A';
+				char base = (av[1][i] >= 'a' && av[1][i] <= 'z') ? 'a' : 'A';
 				av[1][i] = base + (av[1][i] - base + 1) % 26;
 			}
 			write(1, &av[1][i], 1);

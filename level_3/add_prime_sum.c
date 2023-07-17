@@ -26,52 +26,49 @@ $>
 */
 
 #include <unistd.h>
-#include <stdio.h>
 
 int ft_atoi(char *s) {
     int i = 0;
-    int sign = 1;
     int result = 0;
-    while (s[i] == ' ' || (s[i] >= 9 && s[i] <= 13))
-        i++;
-    if (s[i] == '-')
-        sign = -1;
-    if (s[i] == '-' || s[i] == '+')
-        i++;
     while(s[i] >= '0' && s[i] <= '9') {
         result = result * 10 + s[i] - '0';
         i++;
     }
-    return (sign * result);
+    return result;
 }
 
 int is_prime(int n) {
     if (n <= 1) return 0;
-    for (int i = 2; i <= n / 2; ++i) {
-        if(n % i == 0) return 0;
+    for (int i = 2; i * i <= n; ++i) {
+        if(n % i == 0)
+            return 0;
     }
     return 1;
 }
 
+void putnbr(int n) {
+    if (n >= 10)
+        putnbr(n/10);
+    char digit = n % 10 + '0';
+    write(1, &digit, 1);
+}
+
 int main(int ac, char **av) {
-    if (ac != 2) {
-        printf("0\n");
-        return 0;
-    }
-
-    int n = ft_atoi(av[1]);
-    if (n <= 0) {
-        printf("0\n");
-        return 0;
-    }
-
-    int sum = 0;
-    for (int i = 2; i <= n; ++i) {
-        if (is_prime(i)) {
-            sum += i;
+    if (ac == 2) {
+        int n = ft_atoi(av[1]);
+        if (n <= 0) {
+            write(1, "0\n", 2);
+            return 0;
         }
-    }
-
-    printf("%d\n", sum);
+        int sum = 0;
+        while (n > 0) {
+            if (is_prime(n)) {
+                sum += n;
+                n--;
+            }
+        }
+        putnbr(sum);
+    } else write(1, "0", 1);
+    write(1, "\n", 1);
     return 0;
 }

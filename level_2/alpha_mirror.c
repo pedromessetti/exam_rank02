@@ -40,7 +40,8 @@ int is_alpha(char c) {
 int main(int ac, char **av)
 {
     if (ac == 2) {
-        for (int i = 0; av[1][i] ; i++) {
+        int i = -1;
+        while (av[1][++i]) {
             if (is_alpha(av[1][i])) {
                 char oposite = av[1][i] >= 'a' ? 'z' - (av[1][i] - 'a') : 'Z' - (av[1][i] - 'A');
                 write(1, &oposite, 1);
