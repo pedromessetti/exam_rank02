@@ -1,3 +1,5 @@
+/*
+
 Assignment name  : rev_wstr
 Expected files   : rev_wstr.c
 Allowed functions: write, malloc, free
@@ -27,3 +29,21 @@ Leviosa Wingardium$
 $> ./rev_wstr | cat -e
 $
 $>
+
+*/
+
+#include <unistd.h>
+#include <stdlib.h>
+
+int is_space(char c) {
+    if (c == ' ' || (c >= 9 && c <= 13)) return 1;
+    return 0;
+}
+
+int main(int ac, char **av) {
+    if (ac == 2) {
+        
+    }
+    write(1, "\n", 1);
+    return 0;
+}

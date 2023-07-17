@@ -1,3 +1,5 @@
+/*
+
 Assignment name  : ft_atoi_base
 Expected files   : ft_atoi_base.c
 Allowed functions: None
@@ -18,3 +20,15 @@ string.
 Your function must be declared as follows:
 
 int	ft_atoi_base(const char *str, int str_base);
+
+*/
+
+#define BASE "0123456789abcdef"
+
+int	ft_atoi_base(const char *str, int str_base) {
+    int res = 0;
+    int sign = 1;
+    if (str[0] == '-') sign = -1;
+        
+    return res*sign;
+}
