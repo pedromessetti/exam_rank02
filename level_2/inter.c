@@ -43,10 +43,11 @@ int main(int ac, char **av) {
         while(av[1][++i]) {
             j = -1;
             while(av[2][++j]) {
-                if(is_double(av[1], av[1][i], i))
-                if(av[1][i] == av[2][j]) {
-                    write(1, &av[1][i], 1);
-                    break;
+                if(is_double(av[1], av[1][i], i)) {
+                    if(av[1][i] == av[2][j]) {
+                        write(1, &av[1][i], 1);
+                        break;
+                    }
                 }
             }
         }
